@@ -25,18 +25,22 @@ board.on('ready',function(){
     },time);
   };
 
+  var thenObject = {
+    'for': forFunc
+  };
+
   function forward(speed){
     leftMotor.reverse(speed);
     rightMotor.reverse(speed);
-
-    return {
-      'for' :forFunc 
-    };
+    
+    return thenObject;
   }
 
   function backward(speed){
     leftMotor.forward(speed);
     rightMotor.forward(speed);
+
+    return thenObject;
   }
   
   function stop(){
